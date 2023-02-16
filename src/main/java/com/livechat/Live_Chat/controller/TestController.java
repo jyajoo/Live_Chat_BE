@@ -12,5 +12,5 @@ import java.util.List;
 public class TestController {
     @GetMapping("/hello")
     public List<String> hello() {
-        return Arrays.asList("안녕하세요", "Hello","되는거냐 맞냐");
+        return Arrays.asList("안녕하세요", "Hello","되는거냐");
 }}
