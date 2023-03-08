@@ -11,17 +11,17 @@ import java.time.LocalDateTime;
 @Entity
 public class Member {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true)
     private Long id;
 
-    @Column(unique = true, length = 20)
+    @Column(nullable = false, unique = true, length = 20)
     private String username;
 
-    @Column(length = 16)
+    @Column(nullable = false, length = 16)
     private String password;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String nickname;
 
     private MEMBER_ROLE role;
@@ -30,4 +30,16 @@ public class Member {
 
     private LocalDateTime updateDate;
 
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", role=" + role +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
+                '}';
+    }
 }
